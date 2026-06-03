@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.cityguardian.controller.DashboardController" styleClass="root-pane">
+    <!-- Top: Controls -->
+    <top>
+        <HBox spacing="15" alignment="CENTER_LEFT" styleClass="top-bar">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <Label text="CityGuardian Control Center" styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Start" onAction="#startSimulation" styleClass="control-btn, start-btn"/>
+            <Button text="Pause" onAction="#pauseSimulation" styleClass="control-btn"/>
+            <Button text="Reset" onAction="#resetSimulation" styleClass="control-btn"/>
+            
+            <Label text="Firetrucks:" textFill="WHITE"/>
+            <TextField fx:id="truckInput" text="3" prefWidth="40" styleClass="combo-box"/>
+            <Label text="Helicopters:" textFill="WHITE"/>
+            <TextField fx:id="heliInput" text="3" prefWidth="40" styleClass="combo-box"/>
+            <Label text="Ambulances:" textFill="WHITE"/>
+            <TextField fx:id="ambulanceInput" text="3" prefWidth="40" styleClass="combo-box"/>
+            
+            <Label text="Speed:" textFill="WHITE"/>
+            <ComboBox fx:id="speedCombo" styleClass="combo-box"/>
+        </HBox>
+    </top>
+
+    <!-- Left: City Components -->
+    <left>
+        <VBox spacing="10" styleClass="side-panel">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            <Label text="City Builder" styleClass="section-header"/>
+            
+            <Button text="Generate City" onAction="#generateProceduralCity" styleClass="tool-btn" maxWidth="Infinity"/>
+            <Button text="Clear City" onAction="#clearCity" styleClass="tool-btn" maxWidth="Infinity"/>
+            <Separator />
+            
+            <Label text="Trigger Disasters" styleClass="section-header"/>
+            <Button text="Earthquake" onAction="#triggerEarthquake" styleClass="disaster-btn" maxWidth="Infinity"/>
+            <Button text="Fire Outbreak" onAction="#triggerFire" styleClass="disaster-btn" maxWidth="Infinity"/>
+            <Button text="Flood" onAction="#triggerFlood" styleClass="disaster-btn" maxWidth="Infinity"/>
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <VBox styleClass="legend-panel" spacing="5">
+                <Label text="Map Legend" styleClass="section-header"/>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="LIGHTBLUE"/><Label text="Residential" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="ORANGE"/><Label text="Commercial" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="RED"/><Label text="Disaster Zone" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="#323232"/><Label text="Burnt Area" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="4" fill="#64ff64"/><Label text="Healthy Citizen" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Circle radius="4" fill="YELLOW"/><Label text="Injured Citizen" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="DARKBLUE"/><Label text="Flood Water" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="#8B4513"/><Label text="Debris/Obstacle" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="MAGENTA"/><Label text="Fire Truck" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="CYAN"/><Label text="Helicopter" styleClass="legend-label"/></HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT"><Rectangle width="12" height="12" fill="WHITE"/><Label text="Ambulance" styleClass="legend-label"/></HBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Center: Map -->
+    <center>
+        <StackPane styleClass="map-container">
+            <Canvas fx:id="mapCanvas" width="700" height="600" />
+        </StackPane>
+    </center>
+
+    <!-- Right: AI Recommendations -->
+    <right>
+        <VBox spacing="10" styleClass="side-panel" minWidth="250">
+            <padding><Insets top="20" right="15" bottom="20" left="15"/></padding>
+            <Label text="AI Insights" styleClass="section-header"/>
+            <ListView fx:id="insightsList" VBox.vgrow="ALWAYS" styleClass="insights-list"/>
+        </VBox>
+    </right>
+
+    <!-- Bottom: Stats -->
+    <bottom>
+        <HBox spacing="20" styleClass="bottom-panel" alignment="CENTER_LEFT">
+            <padding><Insets top="10" right="20" bottom="10" left="20"/></padding>
+            <VBox spacing="5">
+                <Label text="Total Citizens: 10,000" fx:id="totalCitizensLabel" textFill="WHITE"/>
+                <Label text="Saved: 0" fx:id="savedLabel" textFill="#00ff00"/>
+                <Label text="Casualties: 0" fx:id="casualtiesLabel" textFill="#ff3333"/>
+            </VBox>
+            
+            <PieChart fx:id="statusChart" title="Population Status" prefHeight="150" prefWidth="200" legendSide="RIGHT"/>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Export Report" styleClass="control-btn"/>
+        </HBox>
+    </bottom>
+</BorderPane>

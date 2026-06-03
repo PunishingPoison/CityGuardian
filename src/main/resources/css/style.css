@@ -1,0 +1,136 @@
+/* Dark Theme styling for CityGuardian */
+
+.root-pane {
+    -fx-background-color: #121212;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.top-bar {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 0 1 0;
+}
+
+.title-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.side-panel {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #333333;
+    -fx-border-width: 0 1 0 1;
+}
+
+.bottom-panel {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #333333;
+    -fx-border-width: 1 0 0 0;
+}
+
+.section-header {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 10 0;
+}
+
+.control-btn {
+    -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5 15 5 15;
+    -fx-cursor: hand;
+}
+
+.control-btn:hover {
+    -fx-background-color: #3d3d3d;
+}
+
+.start-btn {
+    -fx-background-color: #2e7d32;
+}
+
+.start-btn:hover {
+    -fx-background-color: #388e3c;
+}
+
+.tool-btn {
+    -fx-background-color: #2b3a42;
+    -fx-text-fill: white;
+    -fx-padding: 8 10 8 10;
+}
+
+.disaster-btn {
+    -fx-background-color: #4a1919;
+    -fx-text-fill: white;
+    -fx-padding: 8 10 8 10;
+}
+
+.disaster-btn:hover {
+    -fx-background-color: #6a1a1a;
+}
+
+.map-container {
+    -fx-background-color: #000000;
+}
+
+.insights-list {
+    -fx-background-color: #1e1e1e;
+    -fx-control-inner-background: #1e1e1e;
+    -fx-text-fill: white;
+}
+
+.insights-list .list-cell {
+    -fx-text-fill: #e0e0e0;
+    -fx-padding: 5;
+    -fx-font-family: 'Consolas', monospace;
+}
+
+.combo-box {
+    -fx-background-color: #2d2d2d;
+}
+
+.combo-box .cell {
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #2d2d2d;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #2d2d2d;
+}
+
+/* PieChart Styling for Dark Theme */
+.chart-pie-label {
+    -fx-fill: white;
+}
+.chart-legend {
+    -fx-background-color: transparent;
+}
+.chart-legend-item {
+    -fx-text-fill: white;
+}
+.chart-title {
+    -fx-text-fill: white;
+}
+
+/* Legend Styling */
+.legend-panel {
+    -fx-background-color: #252525;
+    -fx-padding: 10;
+    -fx-border-color: #444444;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+.legend-label {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 12px;
+}
+
