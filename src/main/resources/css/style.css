@@ -91,6 +91,7 @@
 
 .combo-box {
     -fx-background-color: #2d2d2d;
+    -fx-text-fill: white;
 }
 
 .combo-box .cell {
