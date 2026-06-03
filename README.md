@@ -1,5 +1,8 @@
 # CityGuardian
 
+<img width="1919" height="1020" alt="image" src="https://github.com/user-attachments/assets/6d8ed514-eaac-4d68-bde3-02544e388f1d" />
+
+
 CityGuardian is a complex, real-time Java application designed to simulate natural disasters and the intelligent deployment of emergency services within a procedurally generated city. The project demonstrates advanced algorithms, state machines, and real-time rendering using JavaFX.
 
 ## Concepts and Architecture
