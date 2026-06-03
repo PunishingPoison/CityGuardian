@@ -84,11 +84,6 @@ public class SimulationEngine {
             
             if (c.isInjured()) {
                 c.setEvacuationPath(null); // Injured citizens cannot walk, they must wait for ambulances
-            } else if (cityHasDisaster && c.getEvacuationPath() == null) {
-                Tile target = findNearestSafeZone(cx, cy);
-                if (target != null) {
-                    c.setEvacuationPath(EvacuationPlanner.findPathAStar(city, currentTile, target, false));
-                }
             }
             
             if (c.getEvacuationPath() != null && c.getCurrentPathIndex() < c.getEvacuationPath().size()) {
